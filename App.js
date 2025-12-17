@@ -1,20 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import styled from 'styled-components/native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Container>
+      <Title>Tela com Styled Components</Title>
+
+      <Button>
+        <ButtonText>Clique aqui</ButtonText>
+      </Button>
+    </Container>
   );
 }
+const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+`;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const Title = styled.Text`
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: bold;
+`;
+
+const Button = styled.TouchableOpacity`
+  background-color: #007aff;
+  padding: 12px 25px;
+  border-radius: 8px;
+`;
+
+const ButtonText = styled.Text`
+  color: white;
+  font-size: 16px;
+`;
